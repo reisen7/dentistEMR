@@ -1,0 +1,37 @@
+server:
+  port: 8909
+  servlet:
+    session:
+      cookie:
+        secure: true
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/doctorkillpatient?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    type: com.zaxxer.hikari.HikariDataSource
+    druid:
+      initial-size: 20
+      min-idle: 10
+      max-active: 100
+      time-between-eviction-runs-millis: 300000
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    servlet:
+      load-on-startup: 1
+    static-path-pattern: /proFile/**
+  web:
+    resources:
+      static-locations: file:D://home/Document/code/课程设计/电子病历/DocKillThePat/src/main/resources/static/file/
+
+
+      
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # ??mybatis-plus????
+  global-config:
+    db-config:
+      # ???????????????
+      # table-prefix: t_
+      id-type: auto
